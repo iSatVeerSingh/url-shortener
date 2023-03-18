@@ -63,7 +63,7 @@ const VerifyLink = () => {
     return <Loading />;
   }
   if (isValidLink && validationMsg !== '') {
-    return <h2>{validationMsg}</h2>;
+    return <h2 className='text-3xl text-center'>{validationMsg}</h2>;
   }
 
   return (
