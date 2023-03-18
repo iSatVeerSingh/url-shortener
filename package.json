@@ -1,8 +1,8 @@
 {
-  "name": "my-webpack-project",
+  "name": "url-shortener",
   "version": "1.0.0",
-  "description": "My webpack project",
-  "main": "index.js",
+  "description": "Url Shortener",
+  "main": "server/main.js",
   "type": "module",
   "scripts": {
     "client-dev": "webpack-dev-server",
