@@ -8,6 +8,7 @@ import path from 'path';
 const config = {
   entry: './client/src/index.jsx',
   output: {
+    publicPath: '/',
     path: path.resolve('./dist'),
     asyncChunks: true,
     filename: 'js/[name].bundle.js',
