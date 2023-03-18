@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({'extended': true}));
 app.use(cookieParser());
 app.use(cors());
 
@@ -20,12 +20,26 @@ dbConnection();
 
 app.use(express.static(path.resolve('./dist')));
 
-app.use('/api', RootRouter);
+app.use(
+  '/api',
+  RootRouter
+);
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve('./dist/index.html'));
-});
+app.get(
+  '*',
+  (req, res) => {
 
-const { PORT } = process.env || 8000;
+    res.sendFile(path.resolve('./dist/index.html'));
 
-app.listen(PORT, () => console.log('Server is listening on port: ', PORT));
+  }
+);
+
+const {PORT} = process.env || 8000;
+
+app.listen(
+  PORT,
+  () => console.log(
+    'Server is listening on port: ',
+    PORT
+  )
+);

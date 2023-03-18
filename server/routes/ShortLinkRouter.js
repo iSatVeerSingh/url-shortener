@@ -1,13 +1,17 @@
-import { Router } from 'express';
+import {Router} from 'express';
 import {
   GetUrlByUrlId,
   RedirectToOriginalUrl,
-  SendClickVerification,
+  SendClickVerification
 } from '../controllers/urlsController.js';
 
 const ShortLinkRouter = Router();
 
-ShortLinkRouter.route('/:urlId').get(GetUrlByUrlId).post(SendClickVerification);
-ShortLinkRouter.get('/:urlId/verify', RedirectToOriginalUrl);
+ShortLinkRouter.route('/:urlId').get(GetUrlByUrlId).
+  post(SendClickVerification);
+ShortLinkRouter.get(
+  '/:urlId/verify',
+  RedirectToOriginalUrl
+);
 
 export default ShortLinkRouter;

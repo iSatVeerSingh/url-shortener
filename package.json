@@ -8,7 +8,8 @@
     "client-dev": "webpack-dev-server",
     "server-dev": "nodemon ./server/main.js",
     "build": "webpack --mode=production --node-env=production",
-    "start": "node ./server/main.js"
+    "start": "node ./server/main.js",
+    "lint": "eslint \"./client/src/**\" \"./server/**\" --fix"
   },
   "keywords": [],
   "author": "",
