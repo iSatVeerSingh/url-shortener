@@ -21,7 +21,7 @@ export const CreateNewShortUrl = async (req, res) => {
   try {
     const { shortUrl } = await shortUrlDoc.save(),
       { HOST } = process.env,
-      url = `http://${HOST}/${shortUrl}`;
+      url = `${HOST}/${shortUrl}`;
 
     res.status(httpStatus.CREATED).json(getSuccessResponse({ shortUrl: url }));
   } catch (err) {
