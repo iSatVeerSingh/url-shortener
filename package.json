@@ -9,7 +9,8 @@
     "server-dev": "nodemon ./server/main.js",
     "build": "webpack --mode=production --node-env=production",
     "start": "node ./server/main.js",
-    "lint": "eslint \"./client/src/**\" \"./server/**\" --fix"
+    "lint": "eslint \"./client/src/**\" \"./server/**\" --fix",
+    "format": "prettier ./client/src/** ./server/** --write"
   },
   "keywords": [],
   "author": "",

@@ -1,29 +1,18 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import {
   CreateNewUser,
   LoginUser,
-  VerifySignupEmail
+  VerifySignupEmail,
 } from '../controllers/userController.js';
 import {
   validateLoginMiddleware,
-  validateSignupMiddleware
+  validateSignupMiddleware,
 } from '../middlewares/userMiddleware.js';
 
 const UserRouter = Router();
 
-UserRouter.post(
-  '/signup',
-  validateSignupMiddleware,
-  CreateNewUser
-);
-UserRouter.get(
-  '/signup/verify',
-  VerifySignupEmail
-);
-UserRouter.post(
-  '/login',
-  validateLoginMiddleware,
-  LoginUser
-);
+UserRouter.post('/signup', validateSignupMiddleware, CreateNewUser);
+UserRouter.get('/signup/verify', VerifySignupEmail);
+UserRouter.post('/login', validateLoginMiddleware, LoginUser);
 
 export default UserRouter;
