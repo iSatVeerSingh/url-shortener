@@ -48,7 +48,8 @@ const ShortUrl = () => {
       </div>
       {isShort.shortUrl && (
         <div>
-          <p>{isShort.shortUrl}</p>
+          <p className='mb-5 text-lg'>{isShort.shortUrl}</p>
+          <p>This link will automatically expire after 7 days</p>
         </div>
       )}
     </div>
