@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import dbConnection from './utils/dbConnection.js';
 import RootRouter from './routes/RootRouter.js';
+import path from 'path';
 
 dotenv.config();
 
@@ -17,7 +18,13 @@ app.use(cors());
 
 dbConnection();
 
+app.use(express.static(path.resolve('./dist')));
+
 app.use('/api', RootRouter);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve('./dist/index.html'));
+});
 
 const { PORT } = process.env || 8000;
 
