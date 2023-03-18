@@ -27,13 +27,13 @@ export default async (email, data, type) => {
   let msg, subject;
 
   if (type === 'signup') {
-    const link = `http://${HOST}/signup/verify?token=${data}`;
+    const link = `${HOST}/signup/verify?token=${data}`;
     msg = `<h2>Email Verification</h2>
     <p>Click on the link to verify you email</p>
     <a href="${link}" target="_blank">${link}</a>`;
     subject = 'New User Email Verification';
   } else if (type === 'clickVerification') {
-    const link = `http://${HOST}/${data.urlId}/verify?token=${data.jwtToken}`;
+    const link = `${HOST}/${data.urlId}/verify?token=${data.jwtToken}`;
     msg = `<h2>Link Click Verification</h2>
     <p>Click on the link to verify your click</p>
     <a href="${link}" target="_blank">${link}}</a>`;
